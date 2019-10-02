@@ -11,7 +11,7 @@ def rand_matrix(n = 4, a = 0, b = 9):
     return temp_matrix
 def replace_matrix(arr, k):
     n = len(arr)
-    if n is 0 or n is 1 or n is 2:
+    if n < 3:
         return "Min length is 3"
     if n % 2 is 0:
         for i in range(n//2 - 1, n//2 + 1):
@@ -47,4 +47,3 @@ print_matrix(arr)
 k  = input_num("Enter random number:")
 arr = replace_matrix(arr, k)
 print_matrix(arr)
-
