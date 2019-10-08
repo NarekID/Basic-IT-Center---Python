@@ -91,7 +91,7 @@ ex204(4096)
 ex205(4096)
 print("ex206", check_ex(ex206, 1122, 2211))
 print("ex207", check_ex(ex207, 1024, True))
-print("ex208", check_ex(ex208, 222, True))
+print("ex208", check_ex(ex208, 32222, True))
 print("ex209", check_ex(ex209, 1344, True))
 print("ex210", check_ex(ex210, 1023, True))
 
