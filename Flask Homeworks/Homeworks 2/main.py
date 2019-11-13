@@ -11,7 +11,6 @@ from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect
-from flask import jsonify
 
 app = Flask(__name__)
 users = {"Alex": {"Ex 10, 12, 15", "Learn something new in Python"},
