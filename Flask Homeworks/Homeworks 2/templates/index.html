@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title> Main page </title>
+    <style>
+        a{
+            color: blue;
+        }
+        a:hover{
+            color: green;
+        }
+        fieldset{
+            padding: 25px;
+        }
+        legend{
+            font-size: 24px;
+        }
+        ol{
+            padding: 25px;
+            margin: 0px;
+        }
+        label{
+            font-size: 24px;
+            cursor: pointer;
+        }
+        input{
+            font-size: 16px;
+            outline: none !important;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div style="width:320px; margin: 0 auto;">
+        <fieldset>
+            {% if users %}
+            <legend style="text-align: center; color:red;">ALL Users</legend>
+            <form method="POST" action="/">
+                <label for="add_user">Add new user</label>
+                <input type="text" name="new_user" id="add_user" style="width: 79%;">
+                <input type="submit" value="ADD" style="width: 20%; margin-left: -6px;">
+            </form>
+            <ol >
+                {% for user in users %}
+                <li style="font-size: 24px; padding: 10px;"><a href="/{{ user }}">{{ user }}</a></li>
+                {% endfor %}
+            </ol>
+            {% endif %}
+            {% if homeworks %}
+            <legend style="text-align: center; color:red;">{{ user }}</legend>
+            <form method="POST" action="/{{ user }}">
+                <label for="add_homework">Add new homework</label>
+                <input type="text" name="new_homework" id="add_homework" style="width: 79%;">
+                <input type="submit" value="ADD" style="width: 20%; margin-left: -6px;">
+            </form>
+            <ol >
+                {% for homework in homeworks %}
+                    {% if homework != "" %}
+                    <li style="font-size: 24px; padding: 10px;">{{ homework }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+            <a href="/">Back</a>
+            {% endif %}
+        </fieldset>
+    </div>
+{% endblock %}
