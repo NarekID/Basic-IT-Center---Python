@@ -1,0 +1,52 @@
+{% extends 'students/base.html' %}
+{% block head %}
+<title>Student list</title>
+{% endblock %}
+
+{% block body %}
+<style>
+    table{
+        border-collapse: collapse;
+    }
+    table, th, td{
+        border: 1px solid black;
+    }
+    th, td{
+        padding: 10px;
+    }
+    thead tr{
+        background-color: grey;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Year</th>
+            <th>MOG</th>
+        </tr>
+    </thead>
+    {% for object in objects %}
+    <tbody>
+        <tr>
+            <td>
+                {{ object.name }}
+            </td>
+            <td>
+                {{ object.surname }}
+            </td>
+            <td>
+                {{ object.year }}
+            </td>
+            <td>
+                {{ object.mog }}
+            </td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+{% endblock %}
+<h1>Hello</h1>
+<p>Template</p>
