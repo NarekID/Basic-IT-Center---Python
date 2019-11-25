@@ -1,0 +1,16 @@
+{% extends 'products/base.html' %}
+
+{% if product %}
+{% block title %} {{ product.name }} {% endblock %}
+
+{% block content %}
+    <div class="product_page">
+        <h4>Category: <strong>{{ product.category }}</strong> | Manufacturer: <strong>{{ product.owner }}</strong></h4>
+        <h2>{{ product.name }}</h2>
+        <p class="current_price">Current price: <strong>${{ product.price }}</strong></p>
+        <h3><span>Product details</span></h3>
+        <div class="product_detail">{{ product.details|linebreaks }}</div>
+        <p>Available after: <strong>{{ product.registered_date }}</strong></p>
+    </div>
+{% endblock %}
+{% endif %}
