@@ -1,0 +1,13 @@
+body{
+    width: 500px;
+}
+label {
+    display: block;
+}
+div.success{
+    margin: 15px 0px;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    font-size: 24px;
+}
