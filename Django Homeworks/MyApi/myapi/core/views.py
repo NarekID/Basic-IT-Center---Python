@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
 
-class HelloView(APIView):
+class MyApiView(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):
@@ -13,5 +13,7 @@ class HelloView(APIView):
     def post(self, request):
         data = request.data
         with open("myfile.txt", "a") as content:
-            return Response(content.write("\n" + data["content"]))
+            for val in data:
+                content.write("\n" + data[val])
+            return Response(content)
 
