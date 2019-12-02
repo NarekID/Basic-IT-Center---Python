@@ -16,4 +16,3 @@ class MyApiView(APIView):
             for val in data:
                 content.write("\n" + data[val])
             return Response(content)
-
