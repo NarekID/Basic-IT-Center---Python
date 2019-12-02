@@ -1,0 +1,2 @@
+My file opened!
+This row added to myfile!
